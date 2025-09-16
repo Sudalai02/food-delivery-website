@@ -28,7 +28,7 @@ const Navbar = ({ setShowLogin }) => {
           Menu
         </a>
         <a
-          href="#app-downlode" 
+          href="#app-download"
           onClick={() => setMenu("mobile-app")}
           className={menu === "mobile-app" ? "active" : ""}
         >
@@ -45,10 +45,11 @@ const Navbar = ({ setShowLogin }) => {
       <div className="navbar-right">
         <img src={assets.search_icon} alt="search_icon" />
         <div className="navbar-basket-icon">
+          <Link to="/cart">
             <img src={assets.basket_icon} alt="basket_icon" />
-          
+          </Link>
         </div>
-        <button  onClick={() => setShowLogin(true)}>Sign in</button>
+        <button onClick={() => setShowLogin(true)}>Sign in</button>
       </div>
     </div>
   );
