@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./Home.css";
 import Header from "../../components/Header/Header";
@@ -11,10 +10,21 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
-      <ExploreMenu category={category} setCategory={setCategory} />
-      <FoodDisplay category={category} />
-      <AppDownload />
+      <section id="home">
+        <Header />
+      </section>
+
+      <section id="explore-menu">
+        <ExploreMenu category={category} setCategory={setCategory} />
+      </section>
+
+      <section id="food-display">
+        <FoodDisplay category={category} />
+      </section>
+
+      <section id="app-download">
+        <AppDownload />
+      </section>
     </div>
   );
 };

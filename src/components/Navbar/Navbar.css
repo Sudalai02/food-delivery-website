@@ -9,11 +9,20 @@
   width: 150px;
 }
 
+/* ✅ Works for both RouterLink and ScrollLink */
 .navbar-menu {
   display: flex;
   list-style: none;
   gap: 20px;
   color: var(--dark);
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 5px; /* small padding so active underline looks clean */
+  transition: color 0.3s ease;
 }
 
 .navbar-right {
@@ -41,6 +50,7 @@
   cursor: pointer;
 }
 
+/* ✅ Active state (works with your state logic) */
 .navbar .active {
   padding-bottom: 2px;
   border-bottom: 2px solid var(--primary);
@@ -74,6 +84,7 @@
   display: none;
 }
 
+/* Responsive */
 @media (max-width: 1050px) {
   .navbar .logo {
     width: 140px;
