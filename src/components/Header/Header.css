@@ -1,7 +1,7 @@
 header {
   height: 34vw;
   margin: 30px auto;
-  background: url("/header_img.png") no-repeat;
+  background: url("/header_im.jpg") no-repeat;
   background-size: cover;
   position: relative;
   border-radius: 24px;
@@ -21,14 +21,14 @@ header {
 
 .header-contents h2 {
   font-weight: 500;
-  color: #fff;
+  color: #f6f5f8;
   font-size: max(3.9vw, 22px);
   text-shadow: 4px 4px 4px #00000030;
 }
 
 .header-contents p {
   text-align: justify;
-  color: #fff;
+  color: rgb(19, 18, 18);
   font-size: 1vw;
   text-shadow: 2px 2px 2px #00000030;
 }
@@ -40,7 +40,7 @@ header {
   font-weight: 500;
   font-size: max(1vw, 13px);
   padding: 1vw 2.3vw;
-  background-color: #fff;
+  background-color:rgb(247, 245, 244);
   cursor: pointer;
 }
 
