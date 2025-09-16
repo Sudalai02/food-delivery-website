@@ -1,61 +1,57 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import { assets } from '../../assets/assets'
+import React, { useContext, useState } from "react";
+import "./Navbar.css";
+import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ setShowLogin }) => {
-  const [menu, setMenu] = useState("home")
-  const [isOpen, setIsOpen] = useState(false)
-
-  const handleClose = () => setIsOpen(false)
+  
+  const [menu, setMenu] = useState("home");
 
   return (
-    <div className='navbar'>
-      <img src={assets.logo} alt='' className='logo' />
-
-      {/* Desktop Menu */}
-      <ul className='navbar-menu desktop'>
-      <a href='#home'
-            onClick={()=>setMenu("")}
-            className={menu==="home"?"active":""}
-          >Home</a>
-        <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
-        <a href='#app-downlode' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile App</a>
-        <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact</a>
+    <div className="navbar">
+      <Link to="/">
+        <img src={assets.logo} alt="logo" className="logo" />
+      </Link>
+      <ul className="navbar-menu">
+        <Link
+          to="/"
+          onClick={() => setMenu("home")}
+          className={menu === "home" ? "active" : ""}
+        >
+          Home
+        </Link>
+        <a
+          href="#explore-menu"
+          onClick={() => setMenu("menu")}
+          className={menu === "menu" ? "active" : ""}
+        >
+          Menu
+        </a>
+        <a
+          href="#app-downlode" 
+          onClick={() => setMenu("mobile-app")}
+          className={menu === "mobile-app" ? "active" : ""}
+        >
+          Mobile App
+        </a>
+        <a
+          href="#footer"
+          onClick={() => setMenu("contact-us")}
+          className={menu === "contact-us" ? "active" : ""}
+        >
+          Contact Us
+        </a>
       </ul>
-
-      {/* Right side */}
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
-        <div className="navbar-search-icon">
-          <img src={assets.basket_icon} alt="" />
-          <div className="dot"></div>
+        <img src={assets.search_icon} alt="search_icon" />
+        <div className="navbar-basket-icon">
+            <img src={assets.basket_icon} alt="basket_icon" />
+          
         </div>
-        <button onClick={() => setShowLogin(true)} className="desktop">Sign In</button>
-
-        {/* Hamburger */}
-        <div className={`hamburger ${isOpen ? "active" : ""}`} onClick={() => setIsOpen(!isOpen)}>
-          <span></span><span></span><span></span>
-        </div>
+        <button  onClick={() => setShowLogin(true)}>Sign in</button>
       </div>
-
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-        <ul>
-          <a href='#home'
-            onClick={()=>setMenu("")}
-            className={menu==="home"?"active":""}
-          >Home</a>
-          <a href='#explore-menu' onClick={handleClose}>Menu</a>
-          <a href='#app-downlode' onClick={handleClose}>Mobile App</a>
-          <a href='#footer' onClick={handleClose}>Contact</a>
-        </ul>
-        <button onClick={() => { setShowLogin(true); handleClose(); }}>Sign In</button>
-      </div>
-
-      {/* Overlay */}
-      {isOpen && <div className="overlay" onClick={handleClose}></div>}
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -18,20 +18,17 @@ const StoreContextProvider = (props) => {
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => {
-      if (!prev[itemId]) return prev; // do nothing if not in cart
+      if (!prev[itemId]) return prev;
       const updatedCart = { ...prev };
       updatedCart[itemId] = updatedCart[itemId] - 1;
       if (updatedCart[itemId] <= 0) {
-        delete updatedCart[itemId]; // remove item if 0
+        delete updatedCart[itemId];
       }
       return updatedCart;
     });
   };
 
-  useEffect(() => {
-    console.log("Cart Items: ", cartItems);
-  }, [cartItems]);
-
+ 
   const contextValue = {
     food_list,
     cartItems,
