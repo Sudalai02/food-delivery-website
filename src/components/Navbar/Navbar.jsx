@@ -10,12 +10,12 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
+        {/* Logo   */}
         <ScrollLink to="home" smooth={true} duration={500} offset={-70}>
           <img src={assets.logo} alt="logo" className="logo" />
         </ScrollLink>
 
-        {/* Desktop Menu */}
+        {/* Desktop   menu */}
         <ul className="navbar-menu desktop-menu">
           <ScrollLink
             to="home"
@@ -59,7 +59,7 @@ const Navbar = ({ setShowLogin }) => {
           </ScrollLink>
         </ul>
 
-        {/* Right Section (desktop only) */}
+        {/* Right Section desktop onlu */}
         <div className="navbar-right desktop-menu">
           <img src={assets.search_icon} alt="search_icon" />
           <div className="navbar-basket-icon">
@@ -68,13 +68,13 @@ const Navbar = ({ setShowLogin }) => {
           <button onClick={() => setShowLogin(true)}>Sign in</button>
         </div>
 
-        {/* Hamburger icon (mobile only) */}
+        {/* Hamburger icon mobile  */}
         <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
           ☰
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile dropdown menu */}
       {isOpen && (
         <div className="mobile-menu">
           <ScrollLink
@@ -127,11 +127,7 @@ const Navbar = ({ setShowLogin }) => {
           </ScrollLink>
 
           <div className="mobile-actions">
-            {/*<img src={assets.search_icon} alt="search_icon" />
-            <div className="navbar-basket-icon">
-              <img src={assets.basket_icon} alt="basket_icon" />
-            </div>
-            <button onClick={() => setShowLogin(true)}>Sign in</button>*/}
+            <button onClick={() => setShowLogin(true)}>Sign in</button>
           </div>
         </div>
       )}
